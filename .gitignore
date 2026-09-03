@@ -23,8 +23,6 @@ Thumbs.db
 
 # Environment / secrets
 .env
-application-local.yml
-application-local.yaml
 
 # Build
 out/
