@@ -177,7 +177,6 @@ public class ProductService {
 
         existingProduct.setName(request.getName());
         existingProduct.setPrice(request.getPrice());
-        existingProduct.setQuantity(request.getQuantity());
 
         Product updatedProduct = productRepository.save(existingProduct);
 

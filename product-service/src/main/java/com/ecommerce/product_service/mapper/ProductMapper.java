@@ -14,7 +14,6 @@ public class ProductMapper {
 
         product.setName(request.getName());
         product.setPrice(request.getPrice());
-        product.setQuantity(request.getQuantity());
 
         return product;
     }
@@ -25,7 +24,6 @@ public class ProductMapper {
                 .id(product.getId())
                 .name(product.getName())
                 .price(product.getPrice())
-                .quantity(product.getQuantity())
                 .build();
     }
 }
