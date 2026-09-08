@@ -18,7 +18,7 @@ public class ProductClient {
 
             restClient.get()
                     .uri(
-                            "http://localhost:8081/api/products/{id}",
+                            "http://product-service/api/products/{id}",
                             productId
                     )
                     .retrieve()

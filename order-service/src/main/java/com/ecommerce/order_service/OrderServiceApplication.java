@@ -1,4 +1,4 @@
-package com.ecommerce.inventory_service;
+package com.ecommerce.order_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestClient;
 
 @SpringBootApplication
-public class InventoryServiceApplication {
+public class OrderServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(InventoryServiceApplication.class, args);
+		SpringApplication.run(OrderServiceApplication.class, args);
 	}
 
     @Bean
@@ -23,7 +23,5 @@ public class InventoryServiceApplication {
     public RestClient restClient(RestClient.Builder builder) {
         return builder.build();
     }
-
-
 
 }
