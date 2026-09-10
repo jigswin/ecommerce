@@ -1,16 +1,22 @@
 package com.ecommerce.inventory_service.client;
 
 import com.ecommerce.inventory_service.exception.ProductNotFoundException;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
 
 @Component
-@RequiredArgsConstructor
 public class ProductClient {
 
     private final RestClient restClient;
+
+    public ProductClient(
+            @Qualifier("loadBalancedRestClient")
+            RestClient restClient) {
+
+        this.restClient = restClient;
+    }
 
     public boolean productExists(Long productId) {
 

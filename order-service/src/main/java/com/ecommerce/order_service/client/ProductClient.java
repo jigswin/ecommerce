@@ -4,12 +4,17 @@ import com.ecommerce.order_service.dto.ProductResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 @Component
-@RequiredArgsConstructor
 public class ProductClient {
 
     private final RestClient restClient;
+
+    public ProductClient(
+            @Qualifier("loadBalancedRestClient") RestClient restClient) {
+        this.restClient = restClient;
+    }
 
     public ProductResponse getProduct(Long productId) {
 
